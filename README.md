@@ -1,4 +1,4 @@
-# react-review
+# React Reviewer
 
 # Section 1: Introduction
 
@@ -38,32 +38,33 @@ For larger enterprise applications, Angular may work better. For smaller web app
 There are a few main ways to generate a React application:
 
 #### Q1: My preferred way is to use the Create React App. It
+
+
+##Why do we use className and not class?
+###Q1: Why can't we write class inside our JSX markup?
+
+Class is a reserved keyword in JavaScript for defining classes. So if we tried to keep the class in the JSX, it would cause a syntax error when compiled to JavaScript.
+
+To avoid this conflict, JSX uses className which maps to the HTML class attribute, but doesn't conflict with the class keyword:
+```<div className="header">```
+
+Compiles to:
+``` React.createElement("div", {className: "header"});```
+
+##What are functional components and props?
+###Q1: How to create functional components?
+###Q2: How to pass props to the components?
+
+Function component defined 
 ```
-
-// Why do we use className and not class?
-// Q1: Why can't we write class inside our JSX markup?
-
-// class is a reserved keyword in JavaScript for defining classes. So if we tried to keep the class in the JSX, it would cause a syntax error when compiled to JavaScript.
-
-// To avoid this conflict, JSX uses className which maps to the HTML class attribute, but doesn't conflict with the class keyword:
-<div className="header">
-
-// Compiles to:
-// React.createElement("div", {className: "header"});
-
-// What are functional components and props?
-// Q1: How to create functional components?
-// Q2: How to pass props to the components?
-
-// Function component defined 
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>; 
-}
+}```
 
 // Function components accept props as an argument 
 // and return JSX
 
-function App() {
+```function App() {
   return (
     <div>
       {/* Pass props when rendering the component */}
@@ -73,17 +74,18 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// Welcome component rendered with different props
+ReactDOM.render(<App />, document.getElementById('root'));```
+```
+Welcome component rendered with different props
+```
 // <h1>Hello, Sara</h1>
 // <h1>Hello, Cahal</h1>
-
-// What are class components, props and state?
-// Q1: How to create class components?
-// Q2: How to pass props to class components?
-// Q3: How state is working in class components?
-
+```
+##What are class components, props and state?
+###Q1: How to create class components?
+###Q2: How to pass props to class components?
+###Q3: How state is working in class components?
+```
 // Class component
 class Welcome extends React.Component {
   render() {
@@ -111,59 +113,62 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+```
+Welcome renders:
+```
+<h1>Hello, Sara</h1> 
+<h1>Hello, Mary</h1>
+```
 
-// Welcome renders:
-// <h1>Hello, Sara</h1> 
-// <h1>Hello, Mary</h1>
+##What are dumb vs smart components?
+###Q1: What are dumb and smart components?
+###Q2: What are presentational vs container components?
 
-// What are dumb vs smart components?
-// Q1: What are dumb and smart components?
-// Q2: What are presentational vs container components?
+Here's an overview of dumb vs smart components and presentational vs container components:
 
-// Here's an overview of dumb vs smart components and presentational vs container components:
+###Q1: What are dumb and smart components?
+- Dumb components are simple components that only render UI.
+- They receive data through props and render it.
+- Smart components are more complex with additional logic and state.
+- They may fetch data, handle UI logic, initialize state, etc.
 
-// Q1: What are dumb and smart components?
-// - Dumb components are simple components that only render UI.
-// - They receive data through props and render it.
-// - Smart components are more complex with additional logic and state.
-// - They may fetch data, handle UI logic, initialize state, etc.
+###Q2: What are presentational vs container components?
+- Presentational components focus on the UI and visuals.
+- They render UI based on the data they receive through props.
+- Container components manage data and logic.
+- They often provide the data to presentational components.
+- Container components are also called smart/stateful components.
+- Presentational components are dumb/stateless components.
 
-// Q2: What are presentational vs container components?
-// - Presentational components focus on the UI and visuals.
-// - They render UI based on the data they receive through props.
-// - Container components manage data and logic.
-// - They often provide the data to presentational components.
-// - Container components are also called smart/stateful components.
-// - Presentational components are dumb/stateless components.
+The core idea is separation of concerns:
+- Presentational components handle styling, rendering UI
+- Container components handle data, fetch API calls, state updates
 
-// The core idea is separation of concerns:
-// - Presentational components handle styling, rendering UI
-// - Container components handle data, fetch API calls, state updates
+This makes components more reusable and your app more maintainable.
 
-// This makes components more reusable and your app more maintainable.
+###What is a key index map?
 
-// What is a key index map?
-// Q1: How to render a list inside React?
-// Q2: What is key and why it is bad to use index for it?
-
-// Q1: How to render a list in React?
-// - Use the array map() method to loop through items.
-// - Return JSX for each item from the map callback.
-// - For example:
+##Q1: How to render a list in React?
+- Use the array map() method to loop through items.
+- Return JSX for each item from the map callback.
+For example:
+```
 const listItems = data.map(item => <li>{item.name}</li>);
 return <ul>{listItems}</ul>;
+```
 
-// Q2: What is key and why it is bad to use index for it?
-// - When rendering list items, each one needs a unique "key" prop.
-// - The key helps React identify which items changed between re-renders.
-// - Using the item index as the key is not recommended:
-// - The index can change when adding/removing items.
-// - This can cause performance issues and bugs with component state.
-// - Better to use a unique ID from each data item as the key.
-// - For example:
+###Q2: What is key and why it is bad to use index for it?
+- When rendering list items, each one needs a unique "key" prop.
+- The key helps React identify which items changed between re-renders.
+- Using the item index as the key is not recommended:
+- The index can change when adding/removing items.
+- This can cause performance issues and bugs with component state.
+- Better to use a unique ID from each data item as the key.
+For example:
+```
 data.map(item => <Item key={item.id} name={item.name} />)
-
-// In summary, use map() to render lists and make sure to specify a stable key like an ID.
+```
+In summary, use map() to render lists and make sure to specify a stable key like an ID.
 
 // What is React.Fragment?
 // Q1: What is React fragment?
@@ -173,13 +178,14 @@ data.map(item => <Item key={item.id} name={item.name} />)
 // - React requires components to return a single element.
 // - Fragments allow grouping a list of children without adding extra nodes to the DOM.
 // - Fragments are declared using:
+```
 <React.Fragment>
   <ChildA />
   <ChildB />
   <ChildC />
 </React.Fragment>
-
-// This avoids needing to wrap child elements in unnecessary divs.
+```
+This avoids needing to wrap child elements in unnecessary divs.
 
 // Q2: Do you know the short syntax?
 // - There is a shorter syntax that uses empty tags:
