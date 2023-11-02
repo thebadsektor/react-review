@@ -1,106 +1,44 @@
 # react-review
 
-# AutoQA
+# Section 1: Introduction
 
-```// Section 1: Introduction
-// Pros and Cons of React
-// Q1: What are the pros and cons of React?
-// Q2: How you can compare it to Angular?
+## Pros and Cons of React
 
-// Here are the pros and cons of React compared to Angular:
+### Q1: What are the pros and cons of React?
+### Q2: How can you compare it to Angular?
 
-// Pros of React:
-// - Uses a virtual DOM which can improve performance compared to Angular's dirty checking.
-// - Encourages composable and reusable UI components.
-// - Easy to integrate with other libraries and frameworks.
-// - Large ecosystem of third-party libraries and tools.
-// - Easier learning curve than Angular.
+Here are the pros and cons of React compared to Angular:
 
-// Cons of React:
-// - Only handles the UI layer, so you need to pull in other libraries for routing, state management, etc.
-// - JSX can seem awkward to some developers.
-// - Styling can be more challenging as CSS-in-JS solutions are often used.
-// - Rapid release cycle can mean more breaking changes.
+#### Pros of React:
+- Uses a virtual DOM which can improve performance compared to Angular's dirty checking.
+- Encourages composable and reusable UI components.
+- Easy to integrate with other libraries and frameworks.
+- Large ecosystem of third-party libraries and tools.
+- Easier learning curve than Angular.
 
-// When comparing React to Angular:
-// - Angular provides more out of the box - routing, state management, form validation, etc. This can save time but also means more to learn upfront.
-// - React is more flexible and gives more freedom in how you structure your app. Angular is more opinionated.
-// - Angular uses TypeScript which provides more type safety but also another layer of complexity.
-// - React has a larger community and ecosystem than Angular.
+#### Cons of React:
+- Only handles the UI layer, so you need to pull in other libraries for routing, state management, etc.
+- JSX can seem awkward to some developers.
+- Styling can be more challenging as CSS-in-JS solutions are often used.
+- Rapid release cycle can mean more breaking changes.
 
-// For larger enterprise applications, Angular may work better. For smaller web apps, React may be easier to work with.
-// The choice depends on your background, team, and type of application. Evaluating pros/cons of each can help make the best decision.
+When comparing React to Angular:
+- Angular provides more out of the box - routing, state management, form validation, etc. This can save time but also means more to learn upfront.
+- React is more flexible and gives more freedom in how you structure your app. Angular is more opinionated.
+- Angular uses TypeScript which provides more type safety but also another layer of complexity.
+- React has a larger community and ecosystem than Angular.
 
-// How to create a React application?
-// Q1: How do you prefer to generate your React application?
-// Q2: What are the ways?
+For larger enterprise applications, Angular may work better. For smaller web apps, React may be easier to work with. The choice depends on your background, team, and type of application. Evaluating pros/cons of each can help make the best decision.
 
-// There are a few main ways to generate a React application:
+## How to create a React application?
 
-// Q1: My preferred way is to use the Create React App. It sets up a project with no build configuration needed and with good defaults for Babel, Webpack, ESLint, etc.
+### Q1: How do you prefer to generate your React application?
+### Q2: What are the ways?
 
-// Q2: Some options for generating a React app:
-// - Create React App - An official CLI tool that generates a project with zero configuration. Great for getting started quickly.
-// - Custom Webpack config - You can set up a Webpack config from scratch. Gives you more control and customization but requires more setup.
-// - Next.js - A framework for server-rendered React apps. Also includes routing and build tooling. Good for multi-page React sites.
-// - Gatsby - Uses React but generates static HTML sites. Builds sites with performance optimizations.
-// - Parcel - A zero config build tool and bundler. A simpler but less customizable alternative to Webpack.
-// - React Boilerplate - A highly scalable, offline-first foundation with best practices built-in.
-// - CodeSandbox - An online IDE for rapid React development without local environment setup.
+There are a few main ways to generate a React application:
 
-// So in summary, Create React App is great for starting out and Next.js or Gatsby for more complex sites. Custom Webpack configuration gives the most flexibility but requires more work.
-
-// Section 2: Basic knowledge
-// What is virtual DOM?
-// Q1: What makes React so powerful?
-// Q2: What is virtual DOM?
-// Q3: What is the difference between virtual DOM and shadow DOM?
-
-// Here are the key points on virtual DOM and what makes React powerful:
-
-// Q1: What makes React so powerful?
-// - Declarative - React uses declarative code which is easier to reason about. Just declare what the UI should look like.
-// - Component architecture - Enables building encapsulated, reusable UI components.
-// - Virtual DOM - React keeps a virtual DOM to avoid expensive DOM operations.
-// - Performance - The virtual DOM combined with diffing algorithms makes React very fast.
-// - Ecosystem - React has a large community and many 3rd party libraries.
-
-// Q2: What is virtual DOM?
-// - It is a JavaScript representation of the actual DOM.
-// - It is a copy of the DOM kept in memory and synced with the real DOM.
-// - When components update, a new virtual DOM is created. React then compares it with the previous one and only updates what needs changing on the real DOM.
-// - This process makes React very fast compared to directly manipulating the DOM.
-
-// Q3: Difference between virtual DOM and shadow DOM
-// - Virtual DOM is a React concept for performance optimization.
-// - Shadow DOM is a browser technology for encapsulating DOM and CSS in web components.
-// - Virtual DOM exists in memory while shadow DOM renders on the actual DOM.
-// - Virtual DOM helps track changes while shadow DOM isolates component DOM trees.
-
-// So in summary, the virtual DOM is key to React's performance and declarative programming model! Let me know if you need any clarification or have additional questions.
-
-// What is JSX?
-// Q1: What is JSX?
-// Q2: Is JSX a part of React?
-
-// Here are the key points about JSX:
-
-// Q1: What is JSX?
-// - JSX is a syntax extension to JavaScript.
-// - It allows writing HTML/XML-like code for elements and components.
-// - This code is compiled to React.createElement() calls which return React elements.
-// - JSX allows you to write UI code that looks like the rendered DOM.
-// - It is easier and faster to write than plain JavaScript.
-
-// Q2: Is JSX a part of React?
-// - JSX is not a requirement for using React.
-// - You can write React code with plain JavaScript using React.createElement().
-// - However, JSX is a popular extension used by most React developers.
-// - JSX code must be compiled to plain JS with a transpiler like Babel.
-
-// So JSX is not technically part of React, but rather an extension used along with it.
-
-// In summary, JSX makes it easier to write React UI code by letting you write markup-style syntax. It is a popular extension but completely optional. Let me know if you need any clarification!
+#### Q1: My preferred way is to use the Create React App. It
+```
 
 // Why do we use className and not class?
 // Q1: Why can't we write class inside our JSX markup?
